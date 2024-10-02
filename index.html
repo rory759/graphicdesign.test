@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="descargas.js"></script>
+    <title></title>
+</head>
+<body>
+ 
+ 
+    <header>
+
+
+        <nav class="navbar">
+            <div class="logo">Adriel SF</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="slide.html">Imágenes</a>
+                <a href="videos.html">Videos</a>
+                <a href="#">Experiencia</a>
+                <a href="#">Contacto</a>
+            </div>
+        </nav>
+
+    </header>
+   <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('open'); // Alternar clase 'open' para animar el menú hamburguesa
+    });
+</script>
+    
+    <section class="home">
+        <div class="home-img">
+            <img src="main.gif" alt="" style="">
+        </div>
+        <div class="home-content">
+            <h1 style="font-size: 42px;">Hola, mi nombre es<span> Adriel</span></h1>
+            <h3 class="typing-text" style="font-size: 35;">soy <span></span></h3>
+            <p>Bienvenidos a mi portafolio, en esta web podrán dar un vistazo a algunos de los trabajos que realizo, además de la experiencia y recorrido que tengo.</p>
+           <!--<div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>--> <br><br>
+            <a href="#" class="btn" onclick="sendWhatsApp()">Contáctame</a>
+        </div>
+    </section>
+    <script>
+        function sendWhatsApp() {
+            const phoneNumber = '59170471057'; 
+            const message = '¡Hola! Quisiera más información.';
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
