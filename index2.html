@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="descargas.js"></script>
+    <title></title>
+</head>
+<body>
+ 
+ 
+   <!--<header>
+        <nav class="navbar">
+            <div class="logo" style="width: 30%;">Adriel SF</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="slide.html">Imágenes</a>
+                <a href="videos.html">Videos</a>
+                <a href="#">Experiencia</a>
+                <a href="#"  onclick="sendWhatsApp()">Contacto</a>
+            </div>
+        </nav>
+
+    </header>--> 
+   <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('open'); // Alternar clase 'open' para animar el menú hamburguesa
+    });
+</script>
+<style>
+           video {
+                       border-radius: 2%; /* Bordes redondeados al 2% */
+                       width: 80%; /* Ancho del video */
+                       max-width: 800px; /* Ancho máximo del video */
+                   }
+</style>
+    
+    <section class="home">
+        <div class="home-img">
+            <video autoplay loop muted>
+                <source src="main.mp4" type="video/mp4"> <!-- Reemplaza con la ruta de tu video -->
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+        <center>
+        <div class="home-content">
+            <h1 style="font-size: 42px;">Hola, mi nombre es<span> Adriel</span></h1>
+            <h3 class="typing-text" style="font-size: 35;">soy <span></span></h3>
+
+            <p>Bienvenidos a mi portafolio, tanto en esta página web como en mi hoja de vida podrán dar un vistazo a algunos de los trabajos que realizo, además de la experiencia y recorrido que tengo.</p>
+           <!--<div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>--> <br><br>
+            <a class="btn" style="margin-right: 30px; margin-bottom: 30px;" onclick="sendWhatsApp()">Contacto</a>
+        </div>
+    </center>
+    </section>
+    <script>
+        function sendWhatsApp() {
+            const phoneNumber = '59170471057'; 
+            const message = '¡Hola! Quisiera más información.';
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+    
+<!--seccion 2-->
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: black;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-section {
+        flex: 1;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .text-section h1 {
+        color: white;
+        font-size: 2em;
+    }
+
+    .text-section p {
+        font-size: 1.4rem;
+        color: white;
+        line-height: 1.6;
+    }
+
+    .image-section {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Estilos responsivos para pantallas más pequeñas */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column-reverse; /* Apila imagen debajo del texto en móviles */
+        }
+
+        .text-section, .image-section {
+            text-align: center;
+        }
+
+        .text-section h1 {
+            font-size: 1.5em;
+        }
+    }
+
+    .btn2 {
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 24px;
+            color: black;
+        }
+
+</style>
+</head>
+
+
+<div class="container">
+    <div class="text-section">
+        <h1 style="font-size: 42px;">Sección de Contenido para Redes Sociales<span></span></h1><br>
+        <p>Aquí veras algunos diseños hechos en Adobe Photoshop para redes sociales que realicé con temática del área de educación</p>
+        <br><br>
+        <center>
+        <a class="btn" style="margin-right: 30px; margin-bottom: 30px;" onclick="openModal()">Ver Galería</a>
+    </center>
+    </div>
+    <div class="image-section">
+        <img src="1.png" alt="Imagen de ejemplo" >
+    </div>
+</div>
+
+
+<!-- seccion2 end-->
+
+</body>
+
+<style>
+    body {
+        margin: 0;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    /* Button to open modal */
+    .open-btn2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .open-btn2 button {
+        padding: 0px 0px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 90%;
+        height: auto;
+        max-width: 500px; /* Maximum width for modal */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Close button */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* Navigation buttons */
+    .prev {
+        left: 5px !important;
+    }
+
+    .next {
+        left: 5px !important;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .mobile-slider {
+            display: block; /* Show the mobile slider */
+        }
+    }
+
+    /* Hide overflow and prevent scrolling while modal is open */
+    .modal-open {
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+
+
+<!-- Modal for Mobile Slider -->
+<div class="modal" id="imageModal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <button class="btn2 prev" onclick="changeSlide(-1)">❮</button>
+        <div class="mobile-slider slider">
+            <div class="slides">
+                <div class="slide"><img src="1.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="2.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="3.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="4.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="5.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="6.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="7.png" alt="Mobile Image 1"></div>
+                <div class="slide"><img src="8.png" alt="Mobile Image 1"></div>
+            </div>
+        </div>
+        <button class="btn2 next" onclick="changeSlide(1)">❯</button>
+    </div>
+</div>
+
+<script>
+    let slideIndexMobile = 0;
+
+    function changeSlide(n) {
+        const slides = document.querySelectorAll('.mobile-slider .slide');
+        slideIndexMobile += n;
+        if (slideIndexMobile >= slides.length) slideIndexMobile = 0;
+        if (slideIndexMobile < 0) slideIndexMobile = slides.length - 1;
+
+        slides.forEach((slide, index) => {
+            slide.style.display = index === slideIndexMobile ? 'block' : 'none';
+        });
+    }
+
+    function openModal() {
+        const modal = document.getElementById('imageModal');
+        document.body.classList.add('modal-open'); // Disable scrolling
+        modal.style.display = 'flex'; // Show modal
+        changeSlide(0); // Initialize first image
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        document.body.classList.remove('modal-open'); // Enable scrolling
+        modal.style.display = 'none'; // Hide modal
+    }
+
+    // Initialize the first slide for mobile
+    changeSlide(0);
+</script>
+
+<!--seccion 3--><br>
+
+<div class="container">
+    <div class="image-section">
+        <img src="video0.jpg" alt="Imagen de ejemplo" >
+    </div>
+
+    <div class="text-section">
+     
+        <h1 style="font-size: 42px;">Sección de Videos<span></span></h1><br>
+        <p>Videos Cortos realizados para publicidad pagada, reels, videos, etc. para redes sociales como Instagram, Tik Tok, Facebook</p>
+        <br><br>
+        <center>
+        <a href="videos.html" class="btn" style="margin-right: 30px; margin-bottom: 30px;">Ir a Videos</a>
+    </center>
+    </div>
+ 
+    
+</div>
+
+
+<!-- seccion3 end-->
+<style>
+footer {
+    background-color: #303030; /* Color de fondo negro */
+    color: #fff; /* Texto en blanco */
+    display: flex;
+    justify-content: space-between; /* Separa los elementos en 2 secciones */
+    padding: 20px;
+    align-items: center;
+}
+
+.footer-section {
+    flex: 1; /* Ocupa un espacio proporcionalmente igual */
+    padding: 0 20px;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Cambia la dirección en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .footer-section {
+        padding: 10px 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Contenido del sitio -->
+
+<!-- Footer -->
+<footer>
+<div class="footer-section">
+    <h2>Adriel Sanchez Flores © 2024</h2>
+    <p style="font-size: 14px;"></p>
+</div>
+<div class="footer-section">
+    <p style="font-size: 14px;">Email: billcollins759@gmail.com</p>
+    <p style="font-size: 14px;">Teléfono: 70471057</p>
+</div>
+</footer>
+
+
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="descargas.js"></script>
     <style>
         body { margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; height: 100vh; background-color: #000; }
@@ -18,10 +19,36 @@
         .indicators { display: flex; justify-content: center; margin-top: 10px; }
         .indicator { width: 15px; height: 15px; border-radius: 50%; background-color: white; margin: 0 5px; cursor: pointer; }
         .indicator.active { background-color: red; }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #b74b4b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+           
+            background-color: #913838;
+        }
     </style>
 </head>
 <body>
-
+    <button class="back-button" onclick="goBack()">
+        <i class="material-icons">arrow_back</i>
+    
+    </button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     <div class="slider-container">
         <div class="slider">
             <div class="slide"><video controls loop><source src="video1.mp4" type="video/mp4">Tu navegador no soporta videos.</video></div>

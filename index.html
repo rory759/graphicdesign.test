@@ -10,13 +10,17 @@
     <title></title>
 </head>
 <body>
- 
+<style>
+     video {
+            border-radius: 2%; /* Bordes redondeados al 2% */
+            width: 80%; /* Ancho del video */
+            max-width: 800px; /* Ancho máximo del video */
+        }
+</style> 
  
     <header>
-
-
         <nav class="navbar">
-            <div class="logo">Adriel SF</div>
+            <div class="logo" style="width: 30%;">Adriel SF</div>
             <div class="menu-toggle" id="mobile-menu">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -27,7 +31,7 @@
                 <a href="slide.html">Imágenes</a>
                 <a href="videos.html">Videos</a>
                 <a href="#">Experiencia</a>
-                <a href="#">Contacto</a>
+                <a href="#"  onclick="sendWhatsApp()">Contacto</a>
             </div>
         </nav>
 
@@ -44,26 +48,48 @@
     
     <section class="home">
         <div class="home-img">
-            <img src="main.jpg" alt="https://drive.google.com/uc?export=download&id=1Gyf5rvdPkUyQieTUKVVBdYtsnarOSREt" style="">
+            <video autoplay loop muted>
+                <source src="main.mp4" type="video/mp4"> <!-- Reemplaza con la ruta de tu video -->
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+
+         <!--   <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHE2dnI3ZWw5ZGVpajJmM2d1dXUwaW8xMjJnM3htcGR2am9sMjR2OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gmq1qDyYAeUctBjEr2/giphy.gif" alt="" style="">-->
         </div>
+        <center>
         <div class="home-content">
             <h1 style="font-size: 42px;">Hola, mi nombre es<span> Adriel</span></h1>
             <h3 class="typing-text" style="font-size: 35;">soy <span></span></h3>
-            <p>Bienvenidos a mi portafolio, en esta web podrán dar un vistazo a algunos de los trabajos que realizo, además de la experiencia y recorrido que tengo.</p>
+
+            <p>Bienvenidos a mi portafolio, tanto en esta página web como en mi hoja de vida podrán dar un vistazo a algunos de los trabajos que realizo, además de la experiencia y recorrido que tengo.</p>
+            <p>En esta ocasión me centraré en mostrar trabajos enfocados al área de la educación para optar por el puesto de Diseñador Gráfico de su institución</p>
+            <br>   
+            <p>Si estas viendo esta página desde tu teléfono haz clic en el botón correspondiente, para visualizar el modo de dispositivos móviles</p>
+
            <!--<div class="social-icons">
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
             </div>--> <br><br>
-            <a href="#" class="btn" onclick="sendWhatsApp()">Contáctame</a>
+            <a href="index.html" class="btn" id="btne" style="margin-right: 30px; margin-bottom: 30px;">Modo Escritorio</a>
+            <a href="index2.html" class="btn">Modo Dispositivos Móviles</a>
         </div>
+    </center>
+    <script>
+        // Selecciona todos los botones de la página
+        const botonEspecifico = document.getElementById('btne');
+
+        // Asigna un evento de clic a cada botón
+        botonEspecifico.addEventListener('click', () => {
+            alert('Ya estás en modo escritorio');
+        });
+    </script>
     </section>
     <script>
         function sendWhatsApp() {
             const phoneNumber = '59170471057'; 
             const message = '¡Hola! Quisiera más información.';
-            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank'); 
         }
     </script>
 </body>
