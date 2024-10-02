@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="descargas.js"></script>
+    <style>
+        body { margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; height: 100vh; background-color: #000; }
+        .slider-container { position: relative; width: 320px; overflow: hidden; }
+        .slider { display: flex; transition: transform 1s ease-in-out; }
+        .slide { min-width: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center; }
+        video { max-width: 100%; height: auto; }
+        button { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.5); color: black; border: none; padding: 10px; cursor: pointer; }
+        .prev { left: 10px; } 
+        .next { right: 10px; }
+        button:hover { background-color: rgba(255, 255, 255, 0.8); }
+        .indicators { display: flex; justify-content: center; margin-top: 10px; }
+        .indicator { width: 15px; height: 15px; border-radius: 50%; background-color: white; margin: 0 5px; cursor: pointer; }
+        .indicator.active { background-color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><video controls loop><source src="video1.mp4" type="video/mp4">Tu navegador no soporta videos.</video></div>
+            <div class="slide"><video controls loop><source src="video2.mp4" type="video/mp4">Tu navegador no soporta videos.</video></div>
+            <div class="slide"><video controls loop><source src="video3.mp4" type="video/mp4">Tu navegador no soporta videos.</video></div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="indicators">
+        <div class="indicator" onclick="goToSlide(0)"></div>
+        <div class="indicator" onclick="goToSlide(1)"></div>
+        <div class="indicator" onclick="goToSlide(2)"></div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function moveSlide(direction) {
+            // Pausar el video actual
+            const currentVideo = slides[currentIndex].querySelector('video');
+            if (currentVideo) {
+                currentVideo.pause();
+            }
+
+            // Mover al siguiente video
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            document.querySelector('.slider').style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Reproducir el nuevo video
+            const nextVideo = slides[currentIndex].querySelector('video');
+            if (nextVideo) {
+                nextVideo.play();
+            }
+
+            updateIndicators();
+        }
+
+        function goToSlide(index) {
+            // Pausar el video actual
+            const currentVideo = slides[currentIndex].querySelector('video');
+            if (currentVideo) {
+                currentVideo.pause();
+            }
+
+            // Cambiar el índice actual y mover el slider
+            currentIndex = index;
+            document.querySelector('.slider').style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Reproducir el nuevo video
+            const nextVideo = slides[currentIndex].querySelector('video');
+            if (nextVideo) {
+                nextVideo.play();
+            }
+
+            updateIndicators();
+        }
+
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Inicializar los indicadores
+        updateIndicators();
+    </script>
+
+</body>
+</html>
