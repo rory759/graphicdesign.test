@@ -136,6 +136,13 @@
                <!-- <a href="#">Experiencia</a> -->
                 <a href="#"  onclick="sendWhatsApp()">Contacto</a>
             </div>
+              <script>
+        function sendWhatsApp() {
+            const phoneNumber = '59170471057'; 
+            const message = '¡Hola! Quisiera más información.';
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank'); 
+        }
+    </script>
         </nav>
 
     </header>
